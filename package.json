@@ -1,0 +1,9 @@
+{
+  "name": "todo-list-nodejs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:eduardo-sdev/todo-list-nodejs.git",
+  "author": "eduardo-sdev <eduardosilvaprogramador@gmail.com>",
+  "license": "MIT"
+}
+
