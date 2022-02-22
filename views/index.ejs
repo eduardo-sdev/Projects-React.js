@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>Todo List</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+         <form action="/create" method="post">
+            <input type="text" name="task" id="task" placeholder="Insira uma tarefa">
+            <button id="addButton" type="submit">Adicionar</button>
+        </form>
+        <% tasksList.forEach((task) => { %>
+        <ul>
+            <li><%= task.task %> | <%= task.date %></li>
+        </ul>
+        <% }) %>
+    </body>
+</html>
+
