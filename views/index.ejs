@@ -7,15 +7,32 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-         <form action="/create" method="post">
-            <input type="text" name="task" id="task" placeholder="Insira uma tarefa">
-            <button id="addButton" type="submit">Adicionar</button>
-        </form>
-        <% tasksList.forEach((task) => { %>
-        <ul>
-            <li><%= task.task %> | <%= task.date %></li>
-        </ul>
-        <% }) %>
+        <header>
+
+            <% if (task == null) { %>
+                 <form action="/create" method="post">
+                    <input type="text" name="task" id="task" placeholder="Insira uma tarefa">
+                    <button id="addButton" type="submit">Add</button>
+                </form>
+            <% } else { %>
+                <form action="/updateOne/<%= task._id %>" method="post">
+                     <input type="text" name="task" id="task" value="<%= task.task %>">
+                    <button id="addButton" type="submit">Update</button>
+                </form>
+            <% } %>
+        </header>
+
+
+        <section>
+            <% tasksList.forEach((task) => { %>
+            <ul>
+                <li><%= task.task %> | <%= task.date %></li>
+                <a href="/getById/<%= task._id %>">Edite</a>
+                <a href="">Delete</a>
+            </ul>
+            <% }) %>
+        </section>
+
     </body>
 </html>
 
