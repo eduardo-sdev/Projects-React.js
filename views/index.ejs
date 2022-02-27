@@ -27,11 +27,27 @@
             <% tasksList.forEach((task) => { %>
             <ul>
                 <li><%= task.task %> | <%= task.date %></li>
-                <a href="/getById/<%= task._id %>">Edite</a>
-                <a href="">Delete</a>
+                <a href="/getById/<%= task._id %>/update">Edite</a>
+                <a href="/getById/<%= task._id %>/delete">Delete</a>
             </ul>
             <% }) %>
         </section>
+
+        <% if (taskDelete != null) {%>
+            <section id="modal">
+                <div id="card">
+                    <a href="/">X</a>
+                    <h2>Configmaç~ao</h2>
+                    <hr>
+                    <p>
+                        Deseja realmento apagar a tarefa: <%= taskDelete.task %>?
+                    </p>
+                    <a href="/deleteOne/<%= taskDelete._id %>">Sim</a>
+                    <a href="/">N~ao</a>
+                </div>
+            </section>
+
+        <% } %>
 
     </body>
 </html>
